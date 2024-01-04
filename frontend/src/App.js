@@ -1,14 +1,19 @@
 import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import './App.css';
+
+// Components
+import Home from "./Components/home";
+import Login from "./Components/login";
+import Listings from "./Components/listings";
+
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<h1>This is the homepage</h1>}/>
-                <Route path='/login' element={<h1>This is the login page</h1>}/>
-                <Route path='/listings' element={<h1>This is the property listing page</h1>}/>
+                <Route path='/' element={<Home />}/>
+                <Route path='/login' element={<Login />}/>
+                <Route path='/listings' element={<Listings />}/>
             </Routes>
         </BrowserRouter>
     );
