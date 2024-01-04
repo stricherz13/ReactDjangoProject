@@ -1,21 +1,16 @@
 import React from 'react';
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import './App.css';
-import AppleComponent from "./Components/AppleComponent";
-
-// const theFruits = [
-//     {id: 1, name: "Apple", color: "Red"},
-//     {id: 2, name: "Orange", color: "Orange"},
-//     {id: 3, name: "Banana", color: "Yellow"},
-//     {id: 4, name: "Kiwi", color: "Green"},
-//     {id: 5, name: "Mango", color: "Red"},
-//     {id: 6, name: "Avocado", color: "Green"},
-// ]
 
 function App() {
     return (
-        <>
-           <AppleComponent/>
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<h1>This is the homepage</h1>}/>
+                <Route path='/login' element={<h1>This is the login page</h1>}/>
+                <Route path='/listings' element={<h1>This is the property listing page</h1>}/>
+            </Routes>
+        </BrowserRouter>
     );
 }
 

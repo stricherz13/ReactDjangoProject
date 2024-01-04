@@ -27,7 +27,10 @@ function AppleComponent() {
                 <h1>{AppleDisplay(numberOfApples)}</h1>
             </div>
             <button onClick={IncreaseApple} className="add-btn">Increase</button>
-            <button onClick={DecreaseApple} className="decrease-btn">Decrease</button>
+            <button style={{display: numberOfApples <= 0 ? "None" : ""}} onClick={DecreaseApple}
+                    className="decrease-btn">Decrease
+            </button>
+            {numberOfApples > 10 ? <h1>John has too many apples</h1> : ''}
         </>
     );
 }
