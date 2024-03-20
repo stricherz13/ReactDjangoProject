@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import {CssBaseline} from "@mui/material";
 
 // Components
-import Home from "./Components/home";
+import Home from "./Components/Home";
 import Login from "./Components/login";
 import Listings from "./Components/listings";
 import Header from "./Components/Header";

@@ -1,8 +1,9 @@
 import {AppBar, Button, Toolbar, Typography} from "@mui/material";
 import React from "react";
 import {styled} from "@mui/system";
+import {useNavigate} from "react-router-dom";
 
-const LeftNav = styled('div')({
+const LeftNav = styled(Button)({
     marginRight: 'auto',
 });
 
@@ -32,15 +33,14 @@ const LoginBtn = styled(Button)({
 });
 
 function Header() {
+    const navigate = useNavigate();
     return (
         <AppBar position="static" style={{backgroundColor: "black"}}>
             <Toolbar>
-                <LeftNav>
-                    <Button color="inherit">
-                        <Typography variant="h4">LBREP</Typography>
-                    </Button>
+                <LeftNav onClick={() => navigate('/')}>
+                    <Typography variant="h4">LBREP</Typography>
                 </LeftNav>
-                <Button color="inherit" style={{marginRight: '2rem'}}>
+                <Button color="inherit" style={{marginRight: '2rem'}} onClick={() => navigate('/listings')}>
                     <Typography variant="h6">Listings</Typography>
                 </Button>
                 <Button color="inherit" style={{marginLeft: '2rem'}}>
@@ -50,7 +50,7 @@ function Header() {
                     <PropertyBtn>
                         <Typography variant="h6">Add Property</Typography>
                     </PropertyBtn>
-                    <LoginBtn>
+                    <LoginBtn onClick={() => navigate('/login')}>
                         <Typography variant="h6">Login</Typography>
                     </LoginBtn>
                 </RightNav>
